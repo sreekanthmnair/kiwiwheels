@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KiwiWheels - New Zealand Car Sales</title>
+    <link rel="stylesheet" href="assets/css/styles.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>KiwiWheels 🚗</h1>
+            <nav>
+                <a href="#listings">Buy a Car</a>
+                <a href="#">Sell a Car</a>
+                <a href="#">Finance</a>
+                <a href="#">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <aside class="sidebar">
+            <h2>Find Your Next Ride</h2>
+            <div class="filter-group">
+                <label for="make-filter">Make:</label>
+                <select id="make-filter" onchange="filterCars()">
+                    <option value="">All Makes</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Ford">Ford</option>
+                    <option value="Mazda">Mazda</option>
+                    <option value="Hyundai">Hyundai</option>
+                    <option value="Mitsubishi">Mitsubishi</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="price-filter">Max Price (NZD):</label>
+                <input type="range" id="price-filter" min="5000" max="80000" step="1000" value="80000" oninput="document.getElementById('price-value').innerText = this.value; filterCars()">
+                <p>Max: NZD $<span id="price-value">80000</span></p>
+            </div>
+
+            <div class="filter-group">
+                <label for="location-filter">Location (e.g., Auckland):</label>
+                <input type="text" id="location-filter" placeholder="City or Region" onkeyup="filterCars()">
+            </div>
+            
+            <button onclick="filterCars()">Apply Filters</button>
+        </aside>
+
+        <section id="listings" class="car-listings">
+            <h2>Featured Listings</h2>
+            </section>
+        
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 KiwiWheels. Proudly selling cars in **Aotearoa New Zealand**.</p>
+            <p>GST Inclusive prices. Prices exclude **ORC (On-Road Costs)** unless stated.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script> 
+</body>
+</html>

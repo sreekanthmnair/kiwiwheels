@@ -1,0 +1,212 @@
+/* General Reset and Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f9; /* Light background */
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Header and Navigation */
+header {
+    background: #007bff; /* NZ Blue Primary Color */
+    color: #fff;
+    padding: 1rem 0;
+    border-bottom: 5px solid #0056b3;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-left: 20px;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: #ffc107; /* Yellow Accent */
+}
+
+/* Main Layout */
+main {
+    padding: 20px 0;
+    display: flex;
+    gap: 30px;
+}
+
+/* Sidebar (Filters) */
+.sidebar {
+    flex: 1; 
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: fit-content; 
+    position: sticky;
+    top: 20px; 
+}
+
+.sidebar h2 {
+    color: #007bff;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.filter-group {
+    margin-bottom: 15px;
+}
+
+.filter-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.filter-group select,
+.filter-group input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.sidebar button {
+    background-color: #28a745; /* Green for action */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.sidebar button:hover {
+    background-color: #1e7e34;
+}
+
+/* Car Listings */
+.car-listings {
+    flex: 3; 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px;
+}
+
+/* Car Card */
+.car-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.car-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.car-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.car-info {
+    padding: 15px;
+}
+
+.car-info h3 {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-bottom: 5px;
+}
+
+.price {
+    font-size: 1.8rem;
+    color: #dc3545; /* Red for price emphasis */
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.details-list {
+    list-style: none;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.details-list li {
+    padding: 3px 0;
+    border-bottom: 1px dotted #eee;
+}
+
+.details-list strong {
+    color: #555;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+footer p:last-child {
+    opacity: 0.7;
+    margin-top: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 800px) {
+    main {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        position: static;
+        margin-bottom: 20px;
+    }
+
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav {
+        margin-top: 10px;
+    }
+
+    header nav a {
+        margin: 0 10px;
+    }
+}
