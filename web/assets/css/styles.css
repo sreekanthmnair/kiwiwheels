@@ -171,6 +171,7 @@ footer {
     text-align: center;
     font-size: 14px;
 }
+
 /* Responsive */
 @media (max-width: 900px) {
     .main-container {
