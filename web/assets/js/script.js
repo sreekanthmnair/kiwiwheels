@@ -54,7 +54,6 @@ window.filterCars = () => {
 
     renderCars(filteredCars);
 };
-
 // Initial render
 document.addEventListener('DOMContentLoaded', () => {
     renderCars(carData);
